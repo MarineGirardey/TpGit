@@ -2,18 +2,26 @@
 # -*- coding: utf-8 -*-
 
 """
-# ADN FILE
-# I don't known at this time what the code doing but it will be written here
+    documentation here
 """
-
 __author__ = 'Marine Girardey'
 
+# Imports
+import re
 
+adn_str="atctgg"
 
+# Test if DNA chain is valid
 def is_valid(adn_str):
-    pass
+    if bool(re.search("[zeryuiopqsdfhjklmwxvbn]", adn_str)):
+        return(True)
+    else:
+        return(False)
 
-
+# Ask for a valid DNA chain if it's not
 def get_valid_adn(prompt='chaîne : '):
-    pass
-
+    adn_input = input(prompt)
+    print(adn_input)
+    while is_valid(adn_input):
+        print("Veuillez entrer une chaîne d'ADN valide")
+        adn_input = input(prompt)
